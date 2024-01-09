@@ -6,7 +6,7 @@ var assert= require('assert');
 
 describe('Mathematical Operations Suite',function(){
     
-    it ('addition of numbers',function(){
+    it.only ('addition of numbers',function(){
 
         var a = 10;
         var b = 10;
@@ -15,16 +15,18 @@ describe('Mathematical Operations Suite',function(){
 
     });
 
-    it ('subtraction of numbers',function(){
+    it.skip ('subtraction of numbers',function(){
         var a = 10;
         var b = 10;
         var c = a-b;
+        this.timeout(500);
     });
 
-    it ('multiplication of numbers',function(){
+    it ('multiplication of numbers',function(done){
         var a = 10;
         var b = 10;
         var c = a*b;
+        setTimeout(done,3000);
     });
 
     it ('division of numbers',function(){
@@ -32,4 +34,6 @@ describe('Mathematical Operations Suite',function(){
         var b = 10;
         var c = a/b;
     });
+
+    it("just to implement pending test")
 });
